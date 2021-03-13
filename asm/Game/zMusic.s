@@ -881,11 +881,13 @@ zMusicSetVolume__Fff:
 .endif
 
 .section .rodata
-lbl_8025E588:
+.global zMusic_strings
+zMusic_strings:
 	.incbin "baserom.dol", 0x25B568, 0x170
 
 .section .data
-lbl_8028FD80:
+.global sMusicInfo
+sMusicInfo:
 	.incbin "baserom.dol", 0x28CD60, 0x160
 lbl_8028FEE0:
 	.incbin "baserom.dol", 0x28CEC0, 0x3C
@@ -893,7 +895,8 @@ lbl_8028FF1C:
 	.incbin "baserom.dol", 0x28CEFC, 0x24
 
 .section .bss
-lbl_802F2A50:
+.global sMusicSoundID
+sMusicSoundID:
 	.skip 0xC0
 .global sMusicTrack
 sMusicTrack:
@@ -913,13 +916,15 @@ lbl_803CB95C:
 .global sMusicLastEnum
 sMusicLastEnum:
 	.incbin "baserom.dol", 0x2B5C90, 0x8
-lbl_803CABD8:
+.global sMusicTimer
+sMusicTimer:
 	.incbin "baserom.dol", 0x2B5C98, 0x8
 
 .section .sdata2
 .global lbl_803CDD48
 lbl_803CDD48:
 	.incbin "baserom.dol", 0x2B75E8, 0x4
+.global lbl_803CDD4C
 lbl_803CDD4C:
 	.incbin "baserom.dol", 0x2B75EC, 0x4
 lbl_803CDD50:
