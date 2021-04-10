@@ -1,6 +1,8 @@
 #ifndef XCAMERA_H
 #define XCAMERA_H
 
+#include "iCamera.h"
+
 #include "xBase.h"
 #include "xMath3.h"
 #include "xBound.h"
@@ -92,7 +94,9 @@ struct xCamAsset : xBaseAsset
 struct xCamera : xBase
 {
     RwCamera* lo_cam;
+    // Offset: 0x14
     xMat4x3 mat;
+    // Offset: 0x54
     xMat4x3 omat;
     xMat3x3 mbasis;
     xBound bound;
@@ -168,7 +172,7 @@ struct xCamera : xBase
     float32 roll_csv;
     xVec4 frustplane[12];
 
-    xCamera& operator=(const xCamera&);
+    ASSIGNMENT_OPERATOR(xCamera)
 };
 
 struct xBinaryCamera
